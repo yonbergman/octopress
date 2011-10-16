@@ -1,3 +1,13 @@
-# If publishing to a subdirectory, as in http://site.com/project:
-#   root: /project
-root: /
+# Provides deployment strategy-specific configuration values. NOTE that the
+# deployment has access to the complete Octopress.config, which includes
+# Jekyll's configuration for generating your site. You should not expect to see
+# those values repeated here.
+#
+# Rsync is our default deployment strategy. Should you desire a different
+# deployment strategy, please configure it here and remove the rsync
+# configuration.
+
+# Rsync configuration
+ssh_user: user@domain.com
+ssh_port: 22
+document_root: ~/website.com/

@@ -5,7 +5,7 @@ require "bundler/setup"
 require "stringex"
 require 'octopress'
 
-config = Octopress.configuration
+config = Octopress.config
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
@@ -19,6 +19,7 @@ deploy_branch  = "gh-pages"
 
 ## -- Misc Configs -- ##
 
+# TODO Change in new configuration to use Jekyll's 'destination' and 'source' values.
 public_dir      = "public"    # compiled site directory
 source_dir      = "source"    # source file directory
 blog_index_dir  = 'source'    # directory for your blog's index page (if you put your index in source/blog/index.html, set this to 'source/blog')

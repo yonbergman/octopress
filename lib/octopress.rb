@@ -13,8 +13,8 @@ module Octopress
   # configurations are merged. This means that you may do 'site.root', which is
   # a property configured in the deploy.yml file.
   #
-  def self.configuration
-    @configuration ||=
+  def self.config
+    @config ||=
       YAML.load_file(File.expand_path('../../config/jekyll.yml', __FILE__)).
         deep_merge(YAML.load_file(File.expand_path('../../config/theme.yml', __FILE__))).
         deep_merge(YAML.load_file(File.expand_path('../../config/deploy.yml', __FILE__)))
