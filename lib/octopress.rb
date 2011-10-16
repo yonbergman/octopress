@@ -10,7 +10,7 @@ module Octopress
   #
   # The 'Jekyll Way' is to expose all the properties from the configuration as
   # properties of the site object in the views. This remains true, as these
-  # configurations are merged. This means that you may do 'site.root', which it
+  # configurations are merged. This means that you may do 'site.root', which is
   # a property configured in the deploy.yml file.
   #
   def self.configuration
