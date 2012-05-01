@@ -1,0 +1,34 @@
+--- 
+layout: post
+title: How to get someone's attention without disturbing everyone in the office
+published: true
+date: 2011-06-19
+categories: 
+- growl
+- programming
+- ruby
+- start-ups
+posterous_url: http://yon-line.info/how-to-get-someones-attention-without-disturb
+permalink: /how-to-get-someones-attention-without-disturb
+---
+<p>In the past week or so we started working with headphones on in the office, our team just grew from 4 to 5 people and that meant that the noise in the room grew exponentially and it was getting hard to concentrate.</p>
+<p>That created a new problem for us - <em>How do we get the attention of the person sitting across the room from us without disturbing everyone</em> else?.<br />I know that when someone shouts for someone else I always turn around and take off my headphones just to hear a 'No, not you' - who hasn't?<br />What about throwing stuff...? that's also problem because after some time you run out of stuff to throw :)<br />We tried to use an IM but we couldn't agree around the office which one to use (we're spread through all 3 of the major OS's so that doesn't help it). <br />So I though wouldn't it be cool if I'll have a way with one button to pop up a message on that persons screen without having everyone else jumping and dancing around?</p>
+<p><a href="http://www.flickr.com/photos/lachlanhardy/287563201/" title="Mr Cheerful by Lachlan Hardy, on Flickr"><img src="http://farm1.static.flickr.com/119/287563201_042d7c7c6b.jpg" height="375" alt="Mr Cheerful" width="500" /></a><span style="font-size: x-small;"><span> flickr.com/photos/lachlanhardy/287563201/</span></span> <br /><strong>'Why would you want to annoy him?</strong>'</p>
+<p>I found a neat little setup and wrote a small ruby script that enables me to do just that.</p>
+<p>I already had Growl installed from using autotest so I decided that it would be cool to use that as a notification system. I also found out about <a href="http://www.notify.io/">Notify.io</a> which is a cool server for web notifications for growls.</p>
+<p><span style="text-decoration: underline;"><strong>Setting up a "master account"<br /></strong></span></p>
+<p>Go to <a href="http://www.notify.io">Notify.io</a> sign in with your google account (assuming you want to set up the master account under your name - it doesn't matter much this account can control the name and other stuff for the account that we sent through messages)<br />Go to Settings, check <em>Yes, I want to send notifications with this account <br /></em>and fill out the details with whatever you want I called ours <strong>Team-Notifier</strong><em>.<br /></em>Copy the <em>API KEY aside you'll need it later and save.</em></p>
+<p>Now you can start setting up everyone's computers - start with your own and you'll be able to send notifications from yourself to yourself.<em><br /></em></p>
+<p><span style="text-decoration: underline;"><strong>The setup</strong></span></p>
+<p><span style="text-decoration: underline;"><strong>&nbsp;</strong></span>On each computer I installed a <em>growl </em>client and the Notify.io adapter</p>
+<p>&nbsp; <strong>Mac </strong>- has the original <a href="http://growl.info/">Growl</a> and you need to install the <a href="http://code.google.com/p/notify-io/downloads/detail?name=DesktopNotifier.dmg&amp;can=2&amp;q=">latest Notify.io</a> program (notice that the one linked to on the home site is an old one)<strong>&nbsp; <br />&nbsp; Windows </strong>- I installed <a href="http://www.growlforwindows.com/gfw/">Growl for windows</a> which awesomely has notify.io support built-in.<br />We then configured a <em>Notify.io</em> account by signing in with the person's google account and then downloading the <br /><em>Default Desktop Notifier - Listen URL</em> from the Outlets tab,If you already installed the Notify.io adapter or just Growl for windows double clicking the file should set the connection to notify.io</p>
+<p>Send a message to that computer and go in Notify.io to the Sources tab (If you don't have the script installed yet you can send a test message from the master account's settings tab but only to yourself)<br />hidden in the right side of the screen is a <strong>button</strong> for approving a new source - click it. Now you approved your account to get messages from your master account.<br />Messages should now flow to your growl on your computer, I usually send two test messages because sometimes the first message changes to show that the computer will now get messages and only the second works.</p>
+<p><span style="text-decoration: underline;"><strong>The Script</strong></span></p>
+<p><strong>I also wrote a smal Ruby script to enable people to send Nudges (~pokes) and message to the other people's growls.<br />It's a pretty small Ruby script and it only needs basic Ruby installed on your machine. You can also probably translate this to any other language </strong>but if you wan't to learn some ruby check out this book from PragProg <a href="http://www.amazon.com/gp/product/1934356085/ref=as_li_ss_tl?ie=UTF8&amp;tag=yonline0d-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399369&amp;creativeASIN=1934356085">Programming Ruby 1.9: The Pragmatic Programmers' Guide (Facets of Ruby)</a></p>
+<script src="https://gist.github.com/1034767.js?file=noodge.rb"></script>
+<p>Just download this to any directory you want and start sending messages to your team</p>
+<p>If you don't want to use my Ruby script you can also just send the messages any other way using simple POST commands - read the <a href="http://groups.google.com/group/notify-io/web/developers?pli=1">Notify.io developers guide</a></p>
+<p><span style="text-decoration: underline;"><strong>Other cool stuff</strong></span></p>
+<p>One of my team members wrote a small Vim plugin that enables him to send these pings right from his totally pimped out Vim setup.<br />I created a directory inside my windows programs list with shortcuts to everyone's names - that enables me to windowkey-type name -send&nbsp; nudge&nbsp; which is less awesome than using vim but still pretty nice.<br />We want to create a visual program so that you'll have a list of people's icons on huge buttons and you'll be able to click them to message them :)</p>
+<p>&nbsp;</p>
+<p>If you have any question or problems with this setup just ask and if you have ideas or suggestions i'd love to hear them.<br />I'll try and post a follow up in a week or two to tell you how it went.</p>

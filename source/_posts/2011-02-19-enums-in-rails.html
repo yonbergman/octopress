@@ -1,0 +1,21 @@
+--- 
+layout: post
+title: Enums in Rails
+published: true
+date: 2011-02-19
+categories: []
+
+posterous_url: http://yon-line.info/enums-in-rails
+permalink: /enums-in-rails
+---
+<p>While working on a subset of new stuff at work it became apparant that some of our classes could really use Enums.</p>
+<p>For this post we'll go with the example of a <strong>User </strong>model that has a <strong>role </strong>which can be either <strong>Admin,Moderator or User</strong>.</p>
+<p>We started with the most basic thing which was a simple model with a string column that represents the role, but we wanted some easier way to handle the validation and integrerty, so we read around on the Internet (mostly Stack Overflow - awesome site :) ) and we saw several best practices for handling enum, the most 'comprehansive' was on <a href="http://zargony.com/2008/04/28/five-tips-for-developing-rails-applications">Five tips for developing Rails Applications #3</a>. Basiclly the suggestion we collected was to use rails's validates_inclusion_of <span class="sy">to validate and to overwrite the getter and setter of the attribute to translate to and from symbol so that in your application you always work with symbols but in the DB it will be save as regular strings.</span></p>
+<p><span class="sy">We also wanted a bit more from our enums, we wanted the option to view all availble elements of the enum and we wanted some shorthand methods we know are really usfull from exprience (admin? to check if current user object is an admin and admin! to change the role of the current user object to admin) and we needed an option to have callbacks in some of the enums where each time the value changes a function is called.<br /></span></p>
+<p><span class="sy">And on top all of that we wanted an easy way to get all of this without too much Copy Paste of code. We wanted it declared in a Railsy way inside the model.</span></p>
+<p><span class="sy">So I sat out and wrote this cool new enum helper:</span></p>
+<p><span class="sy">Here is how you declare and use an enum in an existing model</span></p>
+{% gist 835007 %}
+<p><span class="sy">The code to make it work in your own project i'll post tommrrow morning after i'll try and gem it or something nice. If I don't understand how to do it i'll just post the raw code in this post.</span></p>
+<p><span class="sy">Good week and happy hacking</span></p>
+<p><span class="sy"> - Yon<br /></span></p>

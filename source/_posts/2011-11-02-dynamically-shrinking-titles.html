@@ -1,0 +1,33 @@
+--- 
+layout: post
+title: Dynamically Shrinking Titles
+published: true
+date: 2011-11-02
+categories: 
+- css
+- javascript
+- web
+posterous_url: http://yon-line.info/dynamically-shrinking-titles
+permalink: /dynamically-shrinking-titles
+---
+<p>Hey, I wanted to share with you a cool trick I found for creating shrinking titles in a web page.</p>
+<p>My problem was that I had to implement a page which had a title which content was based on an eBay item name and I couldn't control the amount of text in it. The design was it to fit a specific space in the page and be a certain size and color.&nbsp;The other thing that I really didn't want my page layout to jump around because of the title.</p>
+<p>My first solution was to try and integrate <a href="http://www.zachleat.com/web/bigtext-makes-text-big/">BigText</a>&nbsp;into the page, but BigText isn't a great solution and about 1 in every 10 titles came out cropped a bit on the side.</p>
+<p>So here's my simple solution for creating dynamicly shrinking titles which don't distort the page's layout.</p>
+<p>I use an outer div to enforce the size that I want and make sure that even if the inner title is more than one line - you won't see all the other lines and the page won't distort.&nbsp;I then resize the title until it fits inside the space I want it to :)&nbsp;</p>
+<img src="/images/diagarm.png.scaled500.png">
+<p><strong style="text-decoration: underline;">HTML</strong><span style="text-decoration: underline;"> (HAML)</span> -&nbsp;The html for the page is really straight foreward. Just wrap your header with a div</p>
+<script src="https://gist.github.com/1333205.js?file=dst.haml"></script>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong><span style="text-decoration: underline;">CSS</span></strong>&nbsp;(SCSS)</span>&nbsp;- The css is really the trick here, I set the size of the text at my desired size, but wrap it with a div that hides any of the text that exceeds the desired height &amp; width of the title. I also set the line-height of the text to my desired height so that each new line takes a specific known size.</p>
+<p>
+<script src="https://gist.github.com/1333205.js?file=dst.scss"></script>
+</p>
+<p><span style="text-decoration: underline;"><strong style="text-decoration: underline;">JAVASCRIPT</strong> (Coffeescript)</span> - The javascript is pretty straightforeward it checks that the title's height isn't larger than it's parents's height - meaning that it isn't breaking into two lines. Then I try decreasing the font-size until the text fits into the container.</p>
+<p>
+<script src="https://gist.github.com/1333205.js?file=dst.coffee"></script>
+</p>
+<p>I'm using HAML, SCSS &amp; Coffeescript and so should you, it makes the code look 10 times better.</p>
+<p>If you need a book for starting with Coffeescript check this one out. <a href="http://www.amazon.com/gp/product/1934356786/ref=as_li_ss_tl?ie=UTF8&amp;tag=yonline0d-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399373&amp;creativeASIN=1934356786">CoffeeScript (Prag Prog)</a><img src="http://www.assoc-amazon.com/e/ir?t=yonline0d-20&amp;l=as2&amp;o=1&amp;a=1934356786&amp;camp=217145&amp;creative=399373" border="0" height="1" alt="" style="border: none !important; margin: 0px !important;" width="1" /></p>
+<p>----- Update -----&nbsp;</p>
+<p>Someone asked me for a demo so here it is - <a href="http://bit.ly/shrink-demo">Demo page</a></p>

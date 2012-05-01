@@ -1,0 +1,42 @@
+--- 
+layout: post
+title: My First Gem - Enumify
+published: true
+date: 2011-12-20
+categories: [ruby, gem]
+
+posterous_url: http://yon-line.info/my-first-gem-enumify
+permalink: /my-first-gem-enumify
+---
+
+<p>I just published my first gem. ( <strong><a href="https://github.com/yonbergman/enumify" target="_blank">Enumify</a></strong> )</p>
+<p><strong>TL;DR -&nbsp;</strong>I created my first gem in under one hour, it was fun and easy and you should do it to - <a href="https://github.com/yonbergman/enumify" target="_blank">Enumify</a> (my <a href="http://rubygems.org/gems/enumify" target="_blank">gem</a>)</p>
+<p>It was an amazing experience - totally painless and easy.</p>
+<p>You might remember an old post were I&nbsp;promised&nbsp;to create a gem out of my enum lib. Well last night I watched Ryan Bate's&nbsp;Railscast&nbsp;about <a href="http://railscasts.com/episodes/301-extracting-a-ruby-gem" target="_blank">creating a gem</a> and decided it was about time to go on with the idea an actually create the gem.</p>
+<p>I created a new repo with the gem, created tests that cover all of the use cases, wrote documentation - and in less that an hour from&nbsp;starting I had it up and running in RubyGems.
+    <br>A couple of minutes later it was running on <a href="http://travis-ci.org/#!/yonbergman/enumify">Travis-CI</a> (AMAZING) and running in my projects instead of the hardcoded code that I extracted the gem from.</p>
+<p>I have to say that about a year ago when I created this lib and wanted to created a gem it seemed hard and scary but after going through it once - it's really easy and fun seeing your gem up in rubygems and just adding it as a gem in your GemFile is really a good feeling.</p>
+<p>So go - Make your own gem <em>(and give mine a try)</em></p>
+<img src="/images/enumify.png" alt="enumify on rubygems.org">
+<p><span style="font-size: medium;"><em><br /></em></span></p>
+<p><strong><span style="font-size: medium;">A little about the gem</span></strong></p>
+<p>The gem is called <strong>Enumify </strong>and I created it after understanding that a lot of times I have a enum like string attribute on my models but can't really get the most out of it.&nbsp;</p>
+<p>The gem works on a basic string attribute of a model (lets say status for an event) and gives you validations and some functions to&nbsp;easily&nbsp;work and check it.</p>
+<p>To use the gem just add it to your GemFile -&nbsp;<em>gem 'enumify'&nbsp;<br /></em>after that just go to your model where you want to add the enum and call the enum function, it accepts a field name and an array of possible values&nbsp;&nbsp;</p>
+<div class="CodeRay">
+  <div class="code"><pre>class Event &lt; ActiveRecord::Base
+    enum :status, [:available, :canceled, :completed]
+end</pre></div>
+</div>
+<div>There are four things that the enumify gems adds to your model</div>
+<div>
+<ul>
+<li><strong>Validation - </strong>The enumify adds a validation to make sure that the field only receives accepted values</li>
+<li><strong>Super Cool Methods - </strong>adds ? and ! functions for each enum value (<em>canceled</em>? - is it canceled, <em>canceled</em>! - change the state to canceled)</li>
+<li><strong>Callback support - </strong>you can add a x_callback method which will be called each time the status changes</li>
+<li><strong>Scopes&nbsp;- </strong>you can easily query for values of the enum</li>
+</ul>
+<p>for a complete documentation on how to use the gem go to the&nbsp;Github&nbsp;page -&nbsp;<a href="https://github.com/yonbergman/enumify" target="_blank">https://github.com/yonbergman/enumify</a></p>
+<p>&nbsp;</p>
+<p>Follow me on twitter <a href="http://twitter.com/#!/yonbergman">@YonBergman</a> and subscribe to my <a href="http://yon-line.info/atom.xml" target="_blank">RSS</a></p>
+</div>
