@@ -87,7 +87,7 @@ Go **no mobile framework** if your needs are
 * You need O(100%) native ui for one platform
 * Like writing your own web/css/js
 
-Some other frameworks for building web ui
+Some other frameworks for building Mobile UI
 -----
 There are two other frameworks for building web ui.
 The first is [Sencha Touch](http://www.sencha.com/products/touch/) - while I didn't get to work with Sencha myself I heard
