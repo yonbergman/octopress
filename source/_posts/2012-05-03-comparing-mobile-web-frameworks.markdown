@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Comparing mobile web frameworks"
-date: 2012-05-03 21:25
+date: 2012-05-04 17:30
 comments: true
 categories: [web, mobile]
-publish: false
 ---
 
 I wanted to share my recent experiences with building mobile web ui's.
