@@ -12,8 +12,7 @@ Sass comes in two syntaxes `.scss` and the older syntax `.sass` also called inde
 probably talking about the newer syntax.
 In this post I'll be referring only to the `.scss` syntax.
 
-
-## Why I love Sass
+# Why I love Sass
 
 {% img right /images/posts/sass/sass.gif %}
 Sass is what CSS should be, it has really good abilities that are really missing in CSS.
@@ -143,12 +142,12 @@ You can use mixins to help you use the stuff you want while not having to write 
 For example instead of writing `-webkit-box-shadow... -moz-box-shadow` you can now just write `@include box-shadow();` and the mixin will
 take care of writing all the correct prefixes and if needed - change the parameters to fit each browsers quirks.
 But you don't really want to right all these mixins for yourself, this is where **Compass** comes in.
-(Compass)[http://compass-style.org/] is a Sass library containing many of these helpful mixins for cross browser support and other handy stuff that are very helpful.
+
+[Compass](http://compass-style.org/) is a Sass library containing many of these helpful mixins for cross browser support and other handy stuff that are very helpful.
 It has almost everything you need to build beautiful stylesheets with cross browser support - something that if you tried know
 that gets messy very fast.
 
-
-## Why you need it?
+# Why you need it?
 The transition from css to Sass is painless - you don't need to change any old files you already have in your system.
 Just rename your files from .css to .scss add a compiler (Compass is one, Rails 3.1+ is another) from then on just start using Sass's abilities whenever you need them.
 This is a true smooth transition and probably the reason why the .scss syntax beat the old indented syntax.
@@ -160,6 +159,27 @@ With Sass & Compass you can have better Cross browser support esspecialy if you'
 Even if you're not using new properties Sass gives you workaround for the basic stuff **broken** on IE - stuff like `display: inline-block;`
 
 And most of all, Sass lets you treat your stylesheets as part of your code base, with the respect they deserve and with the power that you need.
+__So go start using Sass and enjoy the power!__
 
-So go start using Sass and enjoy the power!
 
+## Alternatives
+There are some other CSS preprocessors out there. I didn't have the chance to use any of them, but people like to know about alternatives.
+[Less](http://lesscss.org/) is the biggest rival to Sass and is mature almost as must as it, [Stylus](http://learnboost.github.com/stylus/) is another alternative albeit a smaller one, there are several others but they are really niche.
+If you're looking for a CSS preprocessor you should probably go with eiter __Sass__ or __Less__.
+
+## Some Rails tips
+ * If you're using **Rails >= 3.1** and the new asset pipeline you already have the power of Sass built in, just rename you're stylesheets to `.css.scss` and you can start using Sass.
+ * You should always try and avoid asset pipeline import command `//require ./avatar.css` - use Sass's `@import` function instead this lets you use mixins and variable you define inside the files your import.
+   If you use using asset pipeline's `require` you'll get the file compiled in place which isn't that fun.
+ * You can use **Compass**'s mixins inside your asset pipeline application. Just added `gem 'compass-rails'` to your Gemfile under the `:assets` group
+   and add the following line to your `application.rb` file
+   {% codeblock lang:ruby %}
+config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
+   {% endcodeblock %}
+ * If you're using an **older version of Rails** or just didn't migrate to the asset pipeline you can use the compass gem to add support for Sass, Compass will not only give you
+   Sass support but will also compile the files for you on the fly or when you want to precompile them all.
+
+
+Hope this post got you interested in checking Sass out - you've got nothing to lose :)
+
+You should follow me on twitter [@YonBergman](http://twitter.com/yonbergman) and subscribe to my [RSS](http://feeds.feedburner.com/Yon-line)
