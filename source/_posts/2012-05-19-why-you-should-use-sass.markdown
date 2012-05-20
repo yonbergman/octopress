@@ -156,10 +156,10 @@ With Sass you can easily manage a system of plugins and shared library 'code' be
 between sites in a way which plain css can never do.
 
 With Sass & Compass you can have better Cross browser support esspecialy if you're planning on using all the new 'CSS3' properties.
+{% img right /images/posts/sass/remuscat.jpg 150 %}
 Even if you're not using new properties Sass gives you workaround for the basic stuff **broken** on IE - stuff like `display: inline-block;`
 
-{% img right /images/posts/sass/remuscat.jpg 150 %}
-And most of all, Sass lets you treat your stylesheets as part of your code base, with the respect they deserve and with the power that you need there.
+And most of all, Sass lets you treat your stylesheets as part of your code base, with the respect they deserve and with the power that you need.
 
 So go start using Sass and enjoy the power!
 
