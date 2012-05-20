@@ -14,7 +14,7 @@ In this post I'll be referring only to the `.scss` syntax.
 
 # Why I love Sass
 
-{% img right /images/posts/sass/sass.gif %}
+{% img right /images/posts/use-sass/sass.gif %}
 Sass is what CSS should be, it has really good abilities that are really missing in CSS.
 After working with Sass for some time you won't understand how css doesn't include them built-in.
 
@@ -155,7 +155,7 @@ With Sass you can easily manage a system of plugins and shared library 'code' be
 between sites in a way which plain css can never do.
 
 With Sass & Compass you can have better Cross browser support esspecialy if you're planning on using all the new 'CSS3' properties.
-{% img right /images/posts/sass/remuscat.jpg 150 %}
+{% img right /images/posts/use-sass/remuscat.jpg 150 %}
 Even if you're not using new properties Sass gives you workaround for the basic stuff **broken** on IE - stuff like `display: inline-block;`
 
 And most of all, Sass lets you treat your stylesheets as part of your code base, with the respect they deserve and with the power that you need.
