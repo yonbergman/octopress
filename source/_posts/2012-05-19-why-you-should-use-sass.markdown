@@ -8,7 +8,7 @@ categories: [css, web]
 
 Today I want to talk about [Sass](http://sass-lang.com/), why I love it and why you should use it.
 Sass is a css preprocessor, meaning it's a file format which you compile to css to be served along side your site.
-Sass comes in two syntaxes `.scss` and the older syntax `.sass` also called indented Sass, whenever you here people talking about Sass they're
+Sass comes in two syntaxes `.scss` and the older syntax `.sass` also called indented Sass, whenever you hear people talking about Sass they're
 probably talking about the newer syntax.
 In this post I'll be referring only to the `.scss` syntax.
 
@@ -154,7 +154,7 @@ This is a true smooth transition and probably the reason why the .scss syntax be
 With Sass you can easily manage a system of plugins and shared library 'code' between different parts of your site and even
 between sites in a way which plain css can never do.
 
-With Sass & Compass you can have better Cross browser support esspecialy if you're planning on using all the new 'CSS3' properties.
+With Sass & Compass you can have better Cross browser support especially if you're planning on using all the new 'CSS3' properties.
 {% img right /images/posts/use-sass/remuscat.jpg 150 %}
 Even if you're not using new properties Sass gives you workaround for the basic stuff **broken** on IE - stuff like `display: inline-block;`
 
