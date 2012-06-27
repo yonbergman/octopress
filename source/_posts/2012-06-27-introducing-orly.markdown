@@ -10,7 +10,7 @@ Today I scratched an itch, something that has been bugging me for quite some tim
 
 
 {% img right /images/posts/orly/owl.png %}
-Some times I _pulled_ a new version of one of my projects and tried to run it only to get an annoying _'Run bundle install...'_ message
+Sometimes I _pull_ a new version of a project and try to run it only to get an annoying _'Run bundle install...'_ message
 or worse an app that starts running but then starts to spazz when you do anything just because no one told you that you needed to run `rake db:migrate`
 So I built a small gem to help me exactly with these issues :)
 
