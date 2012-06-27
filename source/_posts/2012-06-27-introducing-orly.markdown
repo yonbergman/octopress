@@ -17,7 +17,7 @@ So I built a small gem to help me exactly with these issues :)
 __O RLY?__ or __orly__ for short, is a simple utlitly gem you use to install git-hooks into your git repositories.
 Every time you either `git pull` or `git merge` _(pull acutally runs a merge)_ orly goes over the changes and notifies you when there are any commands you need to run.
 It's very unobtrusive, it doesn't run any commands for you - I wanted you to be in controler and decide when and if to run them, it just tells you about them.
-Check out the code on the github page [orly](github.com/yonbergman/orly)
+Check out the code on the [github page](https://github.com/yonbergman/orly)
 
 {% img center /images/posts/orly/orly-example.png %}
 
