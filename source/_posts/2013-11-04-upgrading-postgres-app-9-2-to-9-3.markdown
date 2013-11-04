@@ -12,7 +12,7 @@ I love [Postgres.app](http://postgresapp.com/) it really is the quickest and eas
 But I just had some bad time upgrading from Postgres.app 9.2 to 9.3.  
 So I wrote this short step by step guide to help you upgrade your database without losing all the data you already have there.
 
-* **Step 1** - Download the new Postgres.app
+* **Step 1** - Download the new [Postgres.app](http://postgresapp.com/)
 * **Step 2** - Move your old 9.2 Postgres.app from /Applications to your desktop
 * **Step 3** - Move the newly downloaded Postgres.app to /Applications and launch it
 * **Step 4** - Run `psql` and connect to the db
