@@ -25,7 +25,7 @@ PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 * **Step 7** - Run `psql` and connect to the db
 * **Step 8** - In the psql run `\l` to get a list of tables. You should have 4 tables: postgres, 2 template tables and one table for your username.
 * **Step 9** - Run `\c postgres` to move to the postgres table from your user's table
-* **Step 10** - Run `DROP DATABASE #YOUR_USERNAME#;` to remove your user's table.
+* **Step 10** - Run `DROP DATABASE username;` (replace username with your **username**) to remove your user's table.
 * **Step 11** - Run `\q` to close psql
 * **Step 12** - Close Postgres.app
 * **Step 13** - In the terminal run the following command making sure that all the locations are correct
@@ -39,7 +39,9 @@ pg_upgrade --old-datadir ~/Library/Application\ Support/Postgres/var \
 * **Step 14** - Let the upgrade command run, once it's finished successfully it will print out `Upgrade Complete`
 * **Step 15** - Start Up Postgres.app again
 * **Step 16** - Run `./analyze_new_cluster.sh` to get your DB ready for business
-* **Step 17** _(very optional)_ - Run `./delete_old_cluster.sh` to remove the old 9.2 data and delete the old Postgres.app from your desktop.
+
+---
+_(Optional Last Step)_ - Run `./delete_old_cluster.sh` to remove the old 9.2 data and delete the old Postgres.app from your desktop.
 
 ### I'm still having problems - what to do?
 This is what I did whenever I had issues during the upgrade process and needed a hard-reset.
