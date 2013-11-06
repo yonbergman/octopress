@@ -18,17 +18,17 @@ So I wrote this short step by step guide to help you upgrade your database witho
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 ```
 * **Step 2** - Open a new terminal window and run `which psql` it should point to `/Applications/Postgres.app/Contents/MacOS/bin/psql` - If it doesn't check Step 0 again.
-* **Step 3** - Download the new [Postgres.app](http://postgresapp.com/)
-* **Step 4** - Close the Postgres.app if it's currently running
-* **Step 5** - Move your old 9.2 Postgres.app from /Applications to your desktop
-* **Step 6** - Move the newly downloaded Postgres.app to /Applications and launch it
-* **Step 7** - Run `psql` and connect to the db
-* **Step 8** - In the psql run `\l` to get a list of tables. You should have 4 tables: postgres, 2 template tables and one table for your username.
-* **Step 9** - Run `\c postgres` to move to the postgres table from your user's table
-* **Step 10** - Run `DROP DATABASE username;` (replace username with your **username**) to remove your user's table.
-* **Step 11** - Run `\q` to close psql
+* **Step 3** - Download the new [Postgres.app](http://postgresapp.com/).
+* **Step 4** - Close the Postgres.app if it's currently running.
+* **Step 5** - Copy your old 9.2 Postgres.app from /Applications to your desktop.
+* **Step 6** - Move the newly downloaded Postgres.app to /Applications and launch it.
+* **Step 7** - Run `psql` and connect to the DB.
+* **Step 8** - In the psql run `\l` to get a list of databases. You should have 4 databases: postgres, 2 templates and one database for your username.
+* **Step 9** - Run `\c postgres` to move to the postgres database from your user's database. This is necessarily since you can't drop the database you are currently in (see next step).
+* **Step 10** - Run `DROP DATABASE username;` (replace username with your **username**) to remove your user's database.
+* **Step 11** - Run `\q` to close psql.
 * **Step 12** - Close Postgres.app
-* **Step 13** - In the terminal run the following command making sure that all the locations are correct
+* **Step 13** - In the terminal run the following command making sure that all the locations are correct.
 
 ```
 pg_upgrade --old-datadir ~/Library/Application\ Support/Postgres/var \
@@ -47,7 +47,7 @@ _(Optional Last Step)_ - Run `./delete_old_cluster.sh` to remove the old 9.2 dat
 This is what I did whenever I had issues during the upgrade process and needed a hard-reset.
 
 * _Step -1_ - Close the Postgres.app
-* _Step -2_ - Delete the `~/Library/Containers/com.heroku.postgres/Data/Library/Application Support/Postgres/var` directory 
+* _Step -2_ - Delete the `~/Library/Containers/com.heroku.postgres/Data/Library/Application\ Support/Postgres/var` directory 
 * _Step -3_ - Reopen the Postgres.app let it rebuild the directory and start again from **Step 7** in the guide.
 
 ### Pro Tip #3 - Postgres Client for Mac
